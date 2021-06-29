@@ -31,3 +31,14 @@ variable "folder_id" {
 variable "org_id" {
   type = string
 }
+
+variable "prefix" {
+  default = "dev"
+}
+
+variable "function_location" {
+}
+
+output "cloud_function_url" {
+  value = google_cloudfunctions_function.web_app.https_trigger_url
+}
