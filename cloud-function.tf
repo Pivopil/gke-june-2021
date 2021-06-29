@@ -1,5 +1,7 @@
 resource "google_storage_bucket" "bucket" {
+  project = google_project.project.project_id
   name = "${var.prefix}-cloudfunction-${random_string.suffix.result}"
+  location = var.function_location
 }
 
 data "archive_file" "http_trigger" {
@@ -22,7 +24,7 @@ resource "google_cloudfunctions_function" "web_app" {
   name        = "webhookFunction"
   runtime     = "nodejs10"
   entry_point = "webhook"
-  project     = local.project_name
+  project     = google_project.project.project_id
   //https://cloud.google.com/functions/docs/locations
   region      = var.function_location
 
