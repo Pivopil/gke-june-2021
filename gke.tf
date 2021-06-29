@@ -8,7 +8,7 @@ variable "location" {
 
 provider "google" {
   alias = "custom-gke-cluster"
-  project = google_storage_bucket.bucket.name
+  project = google_project.project.project_id
   region = "europe-west2"
   zone = "europe-west2-a"
 }
