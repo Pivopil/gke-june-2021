@@ -1,20 +1,5 @@
-variable "name" {
-  default = "gke-june-2021"
-}
-
-variable "location" {
-  default = "europe-west2-a"
-}
-
-provider "google" {
-  alias = "custom-gke-cluster"
-  project = google_project.project.project_id
-  region = "europe-west2"
-  zone = "europe-west2-a"
-}
-
 resource "google_container_cluster" "primary" {
-  provider = google.custom-gke-cluster
+  project = google_project.project.project_id
   name = "${var.prefix}-${var.name}"
   location = var.location
   remove_default_node_pool = true
@@ -22,7 +7,7 @@ resource "google_container_cluster" "primary" {
 }
 
 resource "google_container_node_pool" "primary-pool" {
-  provider = google.custom-gke-cluster
+  project = google_project.project.project_id
   cluster = google_container_cluster.primary.name
   name = "${var.prefix}-${var.name}-primary-pool"
   location = var.location

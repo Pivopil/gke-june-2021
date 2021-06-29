@@ -39,6 +39,10 @@ variable "prefix" {
 variable "function_location" {
 }
 
-output "cloud_function_url" {
-  value = google_cloudfunctions_function.web_app.https_trigger_url
+variable "name" {
+  default = "gke-june-2021"
+}
+
+variable "location" {
+  default = "europe-west2-a"
 }
