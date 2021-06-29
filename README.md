@@ -38,3 +38,28 @@ terraform apply -auto-approve
 terraform destroy -auto-approve
 ```
 
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| admin\_project | n/a | `string` | n/a | yes |
+| billing\_account\_id | n/a | `string` | n/a | yes |
+| domain | n/a | `string` | n/a | yes |
+| folder\_id | n/a | `string` | n/a | yes |
+| function\_location | n/a | `any` | n/a | yes |
+| location | n/a | `string` | `"europe-west2-a"` | no |
+| name | n/a | `string` | `"gke-june-2021"` | no |
+| network\_name | n/a | `string` | `"simple-gcp"` | no |
+| org\_id | n/a | `string` | n/a | yes |
+| prefix | n/a | `string` | `"dev"` | no |
+| region | n/a | `string` | n/a | yes |
+| target\_project\_name | n/a | `string` | `"gcp-project-june-2021"` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| cloud\_function\_url | n/a |
+
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
