@@ -26,6 +26,7 @@ resource "google_project_service" "service" {
     "cloudfunctions.googleapis.com",
     "storage-component.googleapis.com",
     "sourcerepo.googleapis.com",
+    "container.googleapis.com",
     "iam.googleapis.com"
   ])
 
